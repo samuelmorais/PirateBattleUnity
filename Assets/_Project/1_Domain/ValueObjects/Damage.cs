@@ -1,7 +1,7 @@
 namespace PirateBattle.Domain.ValueObjects {
     public class Damage
     {
-        float ammout;        
+        float ammount;        
         public Damage(float ammount){
             this.ammount = ammount;
         }
@@ -9,7 +9,9 @@ namespace PirateBattle.Domain.ValueObjects {
             get { 
                 return ammount;
             } 
-            private set; 
+            private set {
+                ammount = value;
+            }
         }
     }
 }

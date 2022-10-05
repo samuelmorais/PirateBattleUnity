@@ -15,9 +15,9 @@ namespace PirateBattle.Domain.ValueObjects {
             return new ShipHealthCondition(currentHealth + ammount);
         }
 
-        public ShipHealthCondition SubtractHealth(float ammount) {
-            var finalHealth = currentHealth - ammount;
-            if(finalHealth < 0) finalHealth = 0;
+        public ShipHealthCondition SubtractHealth(Damage damage, float minimumHealth) {
+            var finalHealth = currentHealth - damage.Ammount;
+            if(finalHealth < 0) finalHealth = minimumHealth;
             return new ShipHealthCondition(finalHealth);
         }
     }

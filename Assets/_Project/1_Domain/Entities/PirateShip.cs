@@ -1,19 +1,20 @@
 using PirateBattle.Domain.ValueObjects;
-using PirateBattle.Domain.Contracts;
 
 namespace PirateBattle.Domain.Entities {
-    public class PirateShip : IDamageable
+    public class PirateShip 
     {
-        public PirateShip(){
-            
-        }
+        float minimumHealth = 0;
+        float maximumHealth;
 
+        public PirateShip(float minimumHealth, float maximumHealth) {
+            this.minimumHealth = minimumHealth;
+            this.maximumHealth = maximumHealth;
+        }
         public ShipHealthCondition TakeDamage(Damage ammount, ShipHealthCondition currentHealth)
         {
-            var substractedHealth = currentHealth.SubtractHealth(ammount);
+            var substractedHealth = currentHealth.SubtractHealth(ammount, minimumHealth);
             return substractedHealth;
         }
-
     }
 }
 

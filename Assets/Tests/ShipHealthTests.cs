@@ -10,6 +10,6 @@ public class ShipHealthTests
     [Test]
     public void ShouldSubstractHealthCorrectlySimplePasses()
     {
-        // Use the Assert class to test conditions
+        
     }
 }
