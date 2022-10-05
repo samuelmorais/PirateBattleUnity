@@ -17,6 +17,9 @@ public class OptionsView : MonoBehaviour
     [SerializeField]
     TMP_Text messageText;
 
+    const int DEFAULT_ENEMY_SPAWN_TIME = 1;
+    const int DEFAULT_SESSION_TIME = 3;
+
     void Start() {
         LoadOptions();
     }
@@ -55,8 +58,14 @@ public class OptionsView : MonoBehaviour
         if(PlayerPrefs.GetInt("SessionTime") != 0) {
             inputSessionTime.text = PlayerPrefs.GetInt("SessionTime").ToString();
         }
+        else {
+            PlayerPrefs.SetInt("SessionTime", DEFAULT_SESSION_TIME);
+        }
         if(PlayerPrefs.GetInt("EnemySpawnTime") != 0) {
             inputSessionTime.text = PlayerPrefs.GetInt("EnemySpawnTime").ToString();
+        }
+        else {
+            PlayerPrefs.SetInt("EnemySpawnTime", DEFAULT_ENEMY_SPAWN_TIME);
         }
         messageText.text = "";
     }
