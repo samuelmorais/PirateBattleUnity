@@ -11,7 +11,8 @@ public class DamageView : MonoBehaviour
     internal SpriteRenderer spriteRenderer;
 
     internal void UpdateShipDamageLook(){
-        spriteRenderer.sprite = shipSpritesAccordingToDamage[damageLevel];
+        if(damageLevel < shipSpritesAccordingToDamage.Length)
+            spriteRenderer.sprite = shipSpritesAccordingToDamage[damageLevel];
     }
 
     internal void DestroyShip() {
